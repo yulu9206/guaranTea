@@ -24,7 +24,7 @@
       </div> --}}
 
 {{!-- error message --}}
-      {{!-- <div class="row">
+      <div class="row">
         <div class="col-lg-12">
           {{#if success_msg}}
             <div class="alert alert-success">{{success_msg}}</div>
@@ -38,19 +38,22 @@
             <div class="alert alert-danger">{{error}}</div>
           {{/if}}
           
-          {{{body}}}
+          {{!-- {{{body}}} --}}
         </div>
-      </div> --}}
+      </div>
 
-      {{{body}}}
+     
       <ul>
+      <li><a href="/">Home</a></li> 
       <li><a href="default.asp">Intro</a></li>
       <li><a href="news.asp">Menu</a></li>
       <li><a href="contact.asp">Contact</a></li>
-      <li style="float:right"><a class="active" href="#login">Login</a></li>
-      <li style="float:right"><a class="active" href="#register">Register</a></li>
+      <li style="float:right"><a class="active" href="/users/login">Login</a></li>
+      <li style="float:right"><a class="active" href="/users/register">Register</a></li>
     </ul>
-     
+
+      {{{body}}}
+
       <footer class="footer">
         <p>&copy; 2017 GuaranTea, Inc.</p>
       </footer>
