@@ -1,7 +1,6 @@
-# guaranTea
-Assignment #2
+# Assignment #2
 
-
+Project name: guaranTea
 Instructor: Ron Mak
 Team name: Parking Guaranteed
 Team members: Yifan Liang, Tianxiang Liu, Annan Wang, Lu Yu
