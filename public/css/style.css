@@ -29,8 +29,12 @@ li a:hover {
     background-color: #111;
 }
 
+<<<<<<< HEAD
 input:invalid {
   color: red;
 }
+=======
+
+>>>>>>> 5cef30e24962562c6dfae2ffd0a3efd041b2728c
 
 
