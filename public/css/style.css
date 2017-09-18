@@ -29,10 +29,6 @@ li a:hover {
     background-color: #111;
 }
 
-input:required {
-  color: red;
-}
-
 input:invalid {
   color: red;
 }
