@@ -1,14 +1,47 @@
 <div class="container">
     <h2>Add Item</h2>
-    <form method="post" action="/teas">
-    <div class="form-group">
-        <label>Product Name</label>
-        <input type="text" class="form-control" name="teaname" placeholder="product name" required>
-    </div>
-    <div class="form-group">
-        <label>Price</label>
-        <input type="text" class="form-control" name="price" placeholder="price" required>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <form method="post" action="/teas/{{tea._id}}">
+        
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" class="form-control" name="teaname" {{#if tea}} placeholder="{{tea.teaname}}" {{/if}} required>
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input type="text" class="form-control" name="price" {{#if tea}} placeholder="{{tea.price}}" {{/if}}required>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        
     </form>
+    </br>
+    <h2>All Items</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Tea Name</th>
+            <th>Price</th>
+            {{!-- <th>Created</th>
+            <th>Updated</th> --}}
+            <th colspan="2">Actions</th>
+        
+        </thead>
+        {{#teas}}
+            <tr>
+                <td>{{teaname}}</td>
+                <td>{{price}}</td>
+                {{!-- <td>{{created_date}}</td>
+                <td>{{updated_date}}</td> --}}
+                <form method="post" action="/teas/{{id}}" >
+                    <td><a href="/teas/{{id}}/edit" type="button" class="btn btn-default btn-warning">
+                        Edit
+                    </a></td>
+                    <td><button type="submit" class="btn btn-default btn-danger">
+                        Delete
+                    </button></td>
+                </form>
+                {{!-- <td><a href="/teas/{{_id}}">Edit</a></td>
+                <td><form action="/teas/delete/{{_id}}?_method=DELETE"><button class="btn btn-default btn-danger">Delete</button></form></td> --}}
+            </tr>
+        {{/teas}}
+    </table>
 </div>
+

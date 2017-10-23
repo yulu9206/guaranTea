@@ -38,7 +38,7 @@ module.exports.addTea = (tea, callback) => {
 }
 
 // Update Tea
-module.exports.updateTea = (id, tea, option, callback) => {
+module.exports.updateTea = (id, tea, callback) => {
 	var query = {_id: id};
 	var update = {
 		name: tea.teaname,
@@ -46,7 +46,7 @@ module.exports.updateTea = (id, tea, option, callback) => {
 		update_date: Date.now,
 		create_date: tea.create_date,
 	}
-	Tea.findOneAndUpdate(query, update, options, callback);
+	Tea.findOneAndUpdate(query, update, callback);
 }
 
 // Delete Tea

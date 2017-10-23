@@ -8,17 +8,21 @@ router.get('/', function(req, res){
 		if(err){
 			throw err;
 		}
-		res.render('teas'); // render with teas
+		res.render('teas', {
+			teas:teas
+		}); 
 	});
 });
 
 // Get Tea
 router.get('/teas/:_id', function(req, res){
-	Tea.getTeaById(req.params._id, function(err, teas){
+	Tea.getTeaById(req.params._id, function(err, tea){
 		if(err){
 			throw err;
 		}
-		res.json(tea); // render with tea;
+		res.redirect('teas', {
+			tea:tea
+		}); 
 	});
 });
 
@@ -29,27 +33,28 @@ router.post('/', function(req, res){
 		if(err){
 			throw err;
 		}
-		res.redirect('/'); //render with teas;
+		res.redirect('/teas'); //render with teas;
 	});
 });
 
 // Update Tea
-router.put('/teas/:_id', function(req, res){
+router.post('/:_id', function(req, res){
 	var tea = req.body;
 	Tea.updateTea(req.params._id, tea, function(err, teas){
 		if(err){
 			throw err;
 		}
-		res.json(teas); //render with teas;
+		res.redirect('/teas'); //render with teas;
 	});	
 });
 
 //Delete Tea
-router.delete('/teas/:_id', function(req, res){
+router.delete('/:_id', function(req, res){
 	var id = req.params._id;
+	console.log("server is deleting", id);
 	Tea.removeTea(id, function(err, teas){
-		res.json(teas); //render with teas;
+		console.log("db is deleting", tea);
+		res.redirect('/teas'); 
 	});
 });
-
 module.exports = router;
