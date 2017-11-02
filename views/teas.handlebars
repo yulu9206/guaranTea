@@ -30,14 +30,14 @@
                 <td>{{price}}</td>
                 {{!-- <td>{{created_date}}</td>
                 <td>{{updated_date}}</td> --}}
-                <form method="post" action="/teas/{{id}}" >
+                {{!-- <form method="post" action="/teas/{{id}}" > --}}
                     <td><a href="/teas/{{id}}/edit" type="button" class="btn btn-default btn-warning">
                         Edit
                     </a></td>
-                    <td><button type="submit" class="btn btn-default btn-danger">
+                    <td><a href="/teas/{{id}}/delete" type="button" class="btn btn-default btn-danger">
                         Delete
-                    </button></td>
-                </form>
+                    </button></a>
+                {{!-- </form> --}}
                 {{!-- <td><a href="/teas/{{_id}}">Edit</a></td>
                 <td><form action="/teas/delete/{{_id}}?_method=DELETE"><button class="btn btn-default btn-danger">Delete</button></form></td> --}}
             </tr>

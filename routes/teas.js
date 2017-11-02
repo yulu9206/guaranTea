@@ -49,7 +49,7 @@ router.post('/:_id', function(req, res){
 });
 
 //Delete Tea
-router.delete('/:_id', function(req, res){
+router.get('/:_id', function(req, res){
 	var id = req.params._id;
 	console.log("server is deleting", id);
 	Tea.removeTea(id, function(err, teas){

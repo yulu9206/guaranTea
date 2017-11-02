@@ -30,10 +30,15 @@
       <ul>
       <li><a href="/">Home</a></li> 
       <li><a href="default.asp">Intro</a></li>
-      <li><a href="news.asp">Menu</a></li>
+      <li><a href="/teas">Menu</a></li>
       <li><a href="contact.asp">Contact</a></li>
+      {{#if user}}
+      <li style="float:right"><a class="active" href="/users/logout">Logout</a></li>
+      {{!-- <li style="float:right"><a class="active" href="/users/register">Dashboard</a></li> --}}
+      {{else}}
       <li style="float:right"><a class="active" href="/users/login">Login</a></li>
       <li style="float:right"><a class="active" href="/users/register">Register</a></li>
+      {{/if}}
     </ul>
 
       {{{body}}}
