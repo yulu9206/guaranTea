@@ -2,7 +2,7 @@
     
      {{#if tea}} <h2>Update Item</h2>
      {{else}} <h2>Add Item</h2>
-     {{/if}}
+     {{/if}} 
     <form method="post" {{#if tea}} action="/teas/{{tea._id}}" {{/if}}>
         
         <div class="form-group">
@@ -17,13 +17,13 @@
         
     </form>
     </br>
+    {{#if tea}}
+    {{else}}
     <h2>All Items</h2>
     <table class="table table-striped">
         <thead>
             <th>Tea Name</th>
             <th>Price</th>
-            {{!-- <th>Created</th>
-            <th>Updated</th> --}}
             <th colspan="2">Actions</th>
         
         </thead>
@@ -31,20 +31,15 @@
             <tr>
                 <td>{{teaname}}</td>
                 <td>{{price}}</td>
-                {{!-- <td>{{created_date}}</td>
-                <td>{{updated_date}}</td> --}}
-                {{!-- <form method="post" action="/teas/{{id}}" > --}}
                     <td><a href="/teas/{{id}}/edit" type="button" class="btn btn-default btn-warning">
                         Edit
                     </a></td>
                     <td><a href="/teas/{{id}}/delete" type="button" class="btn btn-default btn-danger">
                         Delete
                     </button></a>
-                {{!-- </form> --}}
-                {{!-- <td><a href="/teas/{{_id}}">Edit</a></td>
-                <td><form action="/teas/delete/{{_id}}?_method=DELETE"><button class="btn btn-default btn-danger">Delete</button></form></td> --}}
-            </tr>
+                 </tr>
         {{/teas}}
     </table>
+    {{/if}}
 </div>
 
