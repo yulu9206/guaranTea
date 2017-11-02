@@ -43,7 +43,7 @@ module.exports.updateTea = (id, tea, callback) => {
 	var update = {
 		name: tea.teaname,
 		price: tea.price,
-		update_date: Date.now,
+		update_date: tea.update_date,
 		create_date: tea.create_date,
 	}
 	Tea.findOneAndUpdate(query, update, callback);

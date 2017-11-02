@@ -15,12 +15,12 @@ router.get('/', function(req, res){
 });
 
 // Get Tea
-router.get('/:_id/update', function(req, res){
+router.get('/:_id/edit', function(req, res){
 	Tea.getTeaById(req.params._id, function(err, tea){
 		if(err){
 			throw err;
 		}
-		res.redirect('/', {
+		res.render('teas', {
 			tea:tea
 		}); 
 	});

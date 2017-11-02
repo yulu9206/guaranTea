@@ -1,14 +1,17 @@
 <div class="container">
-    <h2>Add Item</h2>
-    <form method="post" action="/teas/{{tea._id}}">
+    
+     {{#if tea}} <h2>Update Item</h2>
+     {{else}} <h2>Add Item</h2>
+     {{/if}}
+    <form method="post" {{#if tea}} action="/teas/{{tea._id}}" {{/if}}>
         
         <div class="form-group">
             <label>Product Name</label>
-            <input type="text" class="form-control" name="teaname" {{#if tea}} placeholder="{{tea.teaname}}" {{/if}} required>
+            <input type="text" class="form-control" name="teaname" {{#if tea}} value="{{tea.teaname}}" {{/if}} required>
         </div>
         <div class="form-group">
             <label>Price</label>
-            <input type="text" class="form-control" name="price" {{#if tea}} placeholder="{{tea.price}}" {{/if}}required>
+            <input type="text" class="form-control" name="price" {{#if tea}} value="{{tea.price}}" {{/if}}required>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
         
