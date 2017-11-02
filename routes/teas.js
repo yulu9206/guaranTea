@@ -15,12 +15,12 @@ router.get('/', function(req, res){
 });
 
 // Get Tea
-router.get('/teas/:_id', function(req, res){
+router.get('/:_id/update', function(req, res){
 	Tea.getTeaById(req.params._id, function(err, tea){
 		if(err){
 			throw err;
 		}
-		res.redirect('teas', {
+		res.redirect('/', {
 			tea:tea
 		}); 
 	});
@@ -49,11 +49,11 @@ router.post('/:_id', function(req, res){
 });
 
 //Delete Tea
-router.get('/:_id', function(req, res){
+router.get('/:_id/delete', function(req, res){
 	var id = req.params._id;
 	console.log("server is deleting", id);
 	Tea.removeTea(id, function(err, teas){
-		console.log("db is deleting", tea);
+		console.log("db is deleting", teas);
 		res.redirect('/teas'); 
 	});
 });
