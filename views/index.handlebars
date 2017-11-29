@@ -24,7 +24,7 @@
             </li>
             {{#if user}}
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/users/logout">Logout</a>
+              <a class="nav-link js-scroll-trigger" href="/users/account">Account</a>
             </li>
             {{!-- <li style="float:right"><a class="active" href="/users/logout">Logout</a></li> --}}
             {{!-- <li style="float:right"><a class="active" href="/users/register">Dashboard</a></li> --}}
@@ -197,9 +197,7 @@
     </section>
 
 {{!-- map --}}
-    <h3>Map</h3>
     <div id="map"></div>
-
     <script>
       function initMap() {
         var uluru = {lat: 37.335187, lng: -121.881072};
@@ -219,5 +217,6 @@
 
         {{!-- footer --}}
     <footer class="footer">
+        <br>
       <p>&copy; 2017 GuaranTea, Inc.</p>
     </footer>

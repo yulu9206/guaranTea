@@ -48,7 +48,7 @@
         <thead>
             <th>Tea Name</th>
             <th>Price</th>
-            <th colspan="2">Quantity</th>
+            <th>Quantity</th>
         
         </thead>
         {{#teas}}
@@ -56,13 +56,7 @@
                 <td>{{teaname}}</td>
                 <td>{{price}}</td>
                 <td><input type="number" name="quantity" min="1" max="10"></td>
-                    {{!-- <td><a href="/teas/{{id}}/edit" type="button" class="btn btn-default btn-warning">
-                        Edit
-                    </a></td>
-                    <td><a href="/teas/{{id}}/delete" type="button" class="btn btn-default btn-danger">
-                        Delete
-                    </button></a> --}}
-                 </tr>
+            </tr>
         {{/teas}}
     </table>
     <button type="submit" class="btn btn-primary">Submit</button>
