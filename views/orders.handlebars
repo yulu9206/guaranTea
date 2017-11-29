@@ -16,14 +16,21 @@
 </ul>
 <div class="container">
     
-     {{#if tea}} <h2>Update Item</h2>
-     {{else}} <h2>Add Item</h2>
-     {{/if}} 
-    <form method="post" {{#if tea}} action="/teas/{{tea._id}}" {{/if}}>
-        
+     {{!-- {{#if tea}} <h2>Edit Order</h2> --}}
+     {{!-- {{else}}  --}}
+     {{!-- <h2>New Order</h2> --}}
+     {{!-- {{/if}}  --}}
+    {{!-- <form method="post" {{#if tea}} action="/teas/{{tea._id}}" {{/if}}> --}}
+    {{!-- <form method="post" action="/orders/">   
         <div class="form-group">
-            <label>Product Name</label>
-            <input type="text" class="form-control" name="teaname" {{#if tea}} value="{{tea.teaname}}" {{/if}} required>
+            <label>Choose your tea</label>
+            <select>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+            </select>
+            <input type="" class="form-control" name="teaname" {{#if tea}} value="{{tea.teaname}}" {{/if}} required>
         </div>
         <div class="form-group">
             <label>Price</label>
@@ -32,30 +39,34 @@
         <button type="submit" class="btn btn-default">Submit</button>
         
     </form>
-    </br>
-    {{#if tea}}
-    {{else}}
-    <h2>All Items</h2>
+    </br> --}}
+    {{!-- {{#if tea}}
+    {{else}} --}}
+    <h2>Place Your Order</h2>
+    <form method="post" action="/orders/">
     <table class="table table-striped">
         <thead>
             <th>Tea Name</th>
             <th>Price</th>
-            <th colspan="2">Actions</th>
+            <th colspan="2">Quantity</th>
         
         </thead>
         {{#teas}}
             <tr>
                 <td>{{teaname}}</td>
                 <td>{{price}}</td>
-                    <td><a href="/teas/{{id}}/edit" type="button" class="btn btn-default btn-warning">
+                <td><input type="number" name="quantity" min="1" max="10"></td>
+                    {{!-- <td><a href="/teas/{{id}}/edit" type="button" class="btn btn-default btn-warning">
                         Edit
                     </a></td>
                     <td><a href="/teas/{{id}}/delete" type="button" class="btn btn-default btn-danger">
                         Delete
-                    </button></a>
+                    </button></a> --}}
                  </tr>
         {{/teas}}
     </table>
-    {{/if}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form> 
+    {{!-- {{/if}} --}}
 </div>
 

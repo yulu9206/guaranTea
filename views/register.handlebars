@@ -1,3 +1,19 @@
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+{{!-- header --}}
+<ul>
+    <li><a href="/">Home</a></li> 
+    {{!-- <li><a href="default.asp">Intro</a></li>
+    <li><a href="/teas">Menu</a></li>
+    <li><a href="contact.asp">Contact</a></li> --}}
+    {{#if user}}
+    <li style="float:right"><a class="active" href="/users/logout">Logout</a></li>
+    {{!-- <li style="float:right"><a class="active" href="/users/register">Dashboard</a></li> --}}
+    {{else}}
+    <li style="float:right"><a class="active" href="/users/login">Login</a></li>
+    <li style="float:right"><a class="active" href="/users/register">Register</a></li>
+    {{/if}}
+</ul>
 <div class="container">
     <h2>Register</h2>
     {{#if errors}}
@@ -26,6 +42,6 @@
         <label>Confirm Password</label>
         <input type="password" class="form-control" placeholder="Password" name="password2" required>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
