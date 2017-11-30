@@ -44,3 +44,23 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
     	callback(null, isMatch);
 	});
 }
+
+// Update User
+module.exports.updateUser = (id, user, callback) => {
+	var query = {_id: id};
+	var update = {
+		name: user.name,
+		username: user.username,
+		email: user.email,
+		password: user.password,
+		update_date: user.update_date,
+		create_date: user.create_date,
+	}
+	User.findOneAndUpdate(query, update, callback);
+}
+
+// Delete User
+module.exports.removeUser = (id, callback) => {
+	var query = {_id: id};
+	User.remove(query, callback);
+}

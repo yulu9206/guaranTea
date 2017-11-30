@@ -19,15 +19,10 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/teas">Management</a>
-            </li>
             {{#if user}}
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/users/account">Account</a>
             </li>
-            {{!-- <li style="float:right"><a class="active" href="/users/logout">Logout</a></li> --}}
-            {{!-- <li style="float:right"><a class="active" href="/users/register">Dashboard</a></li> --}}
             {{else}}
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/users/login">Login</a>
@@ -35,29 +30,26 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/users/register">Register</a>
             </li>
-            {{!-- <li style="float:right"><a class="active" href="/users/login">Login</a></li>
-            <li style="float:right"><a class="active" href="/users/register">Register</a></li> --}}
             {{/if}}
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="/teas">Management</a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <header class="masthead text-center text-white d-flex">
+    <header class="masthead text-center text-white d-flex" id="home">
       <div class="container my-auto">
         <div class="row">
           <div class="col-lg-7 mx-auto">
             <h1 class="text-uppercase">
-              {{!-- <strong>Order Online</strong>
-              <strong>Pick up in store</strong> --}}
               <strong>Guatanteed fresh tea!</strong>
             </h1>
             <hr>
           </div>
           <div class="col-lg-8 mx-auto">
             <a class="btn btn-light btn-xl sr-button" href="/orders">Order Now!</a>
-            {{!-- <hr class="light my-4"> --}}
-            {{!-- <a class="btn btn-light btn-xl js-scroll-trigger" href="/users/login">Login</a> --}}
           </div>
         </div>
       </div>
@@ -71,7 +63,6 @@
             <hr class="light my-4">
             <p class="text-faded mb-4">Order online, then pick up in store. No need to stand in line for a cup of tea!</p>
             <br><p>Nowadays, tea drink is very popular among young people, especially for college students. However, tea drink stores near campus are usually full of people during rush hours. According to our recent survey at Starbucks on campus, it is very common that a person spends 5-10 minutes in line purchasing a drink. In order to solve this issue, we would like to establish a system to provide a platform for customers to order tea drink online, so they can easily pick up the orders at tea stores and dramatically save the waiting time.</p></br>
-            {{!-- <a class="btn btn-light btn-xl sr-button" href="/orders">Order Now!</a> --}}
           </div>
         </div>
       </div>
@@ -244,9 +235,6 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            {{!-- <h2 class="section-heading text-white">We've got what you need!</h2>
-            <hr class="light my-4">
-            <p class="text-faded mb-4">Order online, then pick up in store. No need to stand in line for a cup of tea!</p> --}}
             <a class="btn btn-light btn-xl sr-button" href="/orders">Looks good, get one now ! <i class="fa fa-coffee" aria-hidden="true"></i></a>
           </div>
         </div>

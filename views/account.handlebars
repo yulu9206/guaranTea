@@ -1,10 +1,19 @@
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 {{!-- header --}}
 <ul>
     <li><a href="/">Home</a></li> 
+    <li style="float:right"><a href="/orders">Order</a></li>
+    {{#if user}}
+    <li style="float:right"><a href="/users/account">Account</a></li>
     <li style="float:right"><a class="active" href="/users/logout">Logout</a></li>
+    {{else}}
+    <li style="float:right"><a class="active" href="/users/login">Login</a></li>
+    <li style="float:right"><a class="active" href="/users/register">Register</a></li>
+    {{/if}}
 </ul>
+
 <div class="container">
     </br>
     <h2>Account Information</h2>
@@ -13,7 +22,7 @@
             <th>Name</th>
             <th>Username</th>
             <th>Email</th>
-            <th>Password</th>
+            <th col-span="2">Actions</th>
         </thead>
        
         <tr>
@@ -21,17 +30,33 @@
             <td>{{user.name}}</td>
             <td>{{user.username}}</td>
             <td>{{user.email}}</td>
-            <td>{{user.password}}</td>
-        {{/if}}
-        </tr>
-        <tr>
-            <td><a href="/teas/{{id}}/edit" type="button" class="btn btn-default btn-warning">
+            <td><a href="/users/account/edit" type="button" class="btn btn-default btn-warning">
                 Edit
             </a></td>
-            <td><a href="/teas/{{id}}/delete" type="button" class="btn btn-default btn-danger">
+            <td><a href="/users/account/delete" type="button" class="btn btn-default btn-danger">
                 Delete Account
             </a></td>
+        {{/if}}
         </tr>
+    </table>
+    <br>
+    <h2>Orders</h2>
+    <table class="table table-striped">
+        <thead>
+            <th>Order Number</th>
+            <th>Date</th>
+            <th>Actions</th>
+        
+        </thead>
+        {{#orders}}
+            <tr>
+                <td>{{_id}}</td>
+                <td>{{create_date}}</td>
+                <td><a href="/orders/{{id}}" type="button" class="btn btn-default btn-warning">
+                    Details
+                </a></td>
+            </tr>
+        {{/orders}}
     </table>
 </div>
 
