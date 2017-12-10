@@ -3,18 +3,6 @@ var router = express.Router();
 var Order = require('../models/order');
 var Tea = require('../models/tea');
 
-// Get All Teas
-// router.get('/', function(req, res){
-// 	Tea.getTeas(function(err, teas){
-// 		if(err){
-// 			throw err;
-// 		}
-// 		res.render('teas', {
-// 			teas:teas
-// 		}); 
-// 	});
-// });
-
 // Get Order
 router.get('/:_id/edit', function(req, res){
 	Order.getOrderById(req.params._id, function(err, order){

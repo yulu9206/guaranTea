@@ -76,8 +76,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-
-
 app.use('/', routes);
 app.use('/users', users);
 app.use('/teas', teas);

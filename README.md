@@ -8,6 +8,8 @@ Team members: Yifan Liang, Tianxiang Liu, Annan Wang, Lu Yu
 
 Time: 2017 Fall
 
+Demo:
+https://drive.google.com/file/d/15EGkAOqgSd3E3_Cew_Q0btony9H_VuYS/view?usp=sharing
 
 Instructions:
 1. Start MongoDB: open Terminal, type in “brew services start mongodb” to start a new service (make sure MongoDB is already installed).
